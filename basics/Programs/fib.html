@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = +prompt("Enter the terms","10");
+        document.write("Enter the no of terms for fibonacci series :" +num+"<br>");
+        function fib(num){
+            let start = [0,1];
+            let fibn = Array.from({length:num}).reduce((accum,curr,idx)=>{
+                let next = accum[idx] + accum[idx+1];
+                accum.push(next);
+                return accum;
+            },start);
+        return fibn;
+    }
+    document.write("fibonacci series :");
+    document.write(fib(num));
+    </script>
+</body>
+</html>
