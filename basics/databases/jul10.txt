@@ -1,0 +1,90 @@
+--> Creating table in database\
+
+CRAETE TABLE [tablename] (x VARCHAR(30), y VARCHAR(30), z INTEGER);
+
+EXAMPLE -->
+            CRAETE TABLE cities (
+            name VARCHAR(50),
+            country VARCHAR(50),
+            population INTEGER,
+            area INTEGER
+        );
+......................................................................................................................
+--> Inserting into table 
+
+INSERT INTO [tablename] (x,y,z) VALUES ('Ankur','singh',21);
+
+EXAMPLE -->
+            INSERT INTO
+            cities (name, country, population, area)
+            VALUES
+            ('Dhaka', 'Bangladesh', 19578000, 338);
+
+    for multiple data insert at a time SO,
+
+    INSERT INTO
+    cities (name, country, population, area)
+    VALUES
+    ('Dhaka', 'Bangladesh', 19578000, 338),
+    ('Osaka', 'Japan', 19281000, 225),
+    ('New York', 'United States', 18819000, 778);
+.........................................................................................................................
+--> showing whole data from table
+
+SELECT * FROM [tablename]
+
+EXAMPLE -->
+        SELECT * FROM cities;
+
+
+...........................................................................................................................
+--> showing specific column from table
+
+SELECT x,y FROM [tablename]
+
+EXAMPLE --> 
+            SELECT 
+                name,
+                country
+            FROAM
+                cities;
+
+..............................................................................................................................
+--> show data in other form from table
+        like density which in not exist in table (population/area)
+
+EXAMPLE --> 
+            SELECT
+             name,
+             population / area AS density
+            FROM
+             cities;
+
+also written as --> SELECT
+  n                 ame || ',' || population / area AS name_density
+                    FROM
+                    cities;
+
+
+        OUTPUT--> Dhaka,57923
+                  Osaka,85693
+                  New York,24188
+
+..............................................................................................................................
+CONCAT() operation
+
+SELECT CONCAT(population/area, ', ' ,name) AS density_name FROM cities;
+
+OUTPUT -->as [density_name]
+            57923, Dhaka
+            85693, Osaka
+            24188, New York
+
+other related operations 
+            SELECT CONCAT(UPPER(name), ', ' ,UPPER(country)) AS locations FROM cities;
+also written as 
+            SELECT CONCAT(UPPER(name), ', ' ,UPPER(country)) AS locations FROM cities;
+            OUTPUT --> as [locations]
+                            DHAKA, BANGLADESH
+                            OSAKA, JAPAN
+                            NEW YORK, UNITED STATES
