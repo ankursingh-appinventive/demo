@@ -12,7 +12,7 @@ router.post('/', createTodoValidator,createTodo);        //(req,res)=>{
     // });
 // });
 
-router.get('/', getTodos)      //(req,res)=>{
+router.get('/', getTodos);      //(req,res)=>{
 //     // get all todos
 
 //     res.json({
